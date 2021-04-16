@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <Route exact path="/appointment">
+        <Route path="/appointment">
           <Appointment></Appointment>
         </Route>
       </Switch>

@@ -1,28 +1,28 @@
-import React from 'react';
-import FeaturedService from '../FeaturedService/FeaturedService';
-import MakeAppointment from '../MakeAppointment/MakeAppointment';
-import Testimonials from '../Testimonials/Testimonials';
-import Header from '../Header/Header';
-import Services from '../Services/Services';
-import Blogs from '../Blogs/Blogs';
-import Doctors from '../Doctors/Doctors';
-import Contact from '../Contact/Contact';
-import Footer from '../Footer/Footer';
+import React from "react";
+import Footer from "../../Shared/Footer/Footer";
+import Blogs from "../Blogs/Blogs";
+import Contact from "../Contact/Contact";
+import Doctors from "../Doctors/Doctors";
+import FeaturedService from "../FeaturedService/FeaturedService";
+import Header from "../Header/Header";
+import MakeAppointment from "../MakeAppointment/MakeAppointment";
+import Services from "../Services/Services";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
-    return (
-        <div>
-            <Header></Header>
-            <Services></Services>
-            <FeaturedService></FeaturedService>
-            <MakeAppointment></MakeAppointment>
-            <Testimonials></Testimonials>
-            <Blogs></Blogs>
-            <Doctors></Doctors>
-            <Contact></Contact>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Header></Header>
+      <Services></Services>
+      <FeaturedService></FeaturedService>
+      <MakeAppointment></MakeAppointment>
+      <Testimonials></Testimonials>
+      <Blogs></Blogs>
+      <Doctors></Doctors>
+      <Contact></Contact>
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Home;
