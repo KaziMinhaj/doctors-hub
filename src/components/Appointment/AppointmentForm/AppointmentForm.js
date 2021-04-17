@@ -15,13 +15,17 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
+const AppointmentForm = ({ date, modalIsOpen, closeModal, appointmentOn }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    closeModal();
+  };
 
   return (
     <div>
@@ -31,18 +35,50 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 className="text-center text-brand">{appointmentOn}</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {/* register your input into the hook by invoking the "register" function */}
-          <input defaultValue="test" {...register("example")} />
+        <div className="">
+          <h2 className="text-center text-brand">{appointmentOn}</h2>
+          <h6 className="text-center">{date.toDateString()}</h6>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              {...register("name", { required: true })}
+              placeholder="name"
+              className="form-control"
+            />
+            {errors.name && (
+              <span style={{ color: "red" }}>This field is required</span>
+            )}
+            <br></br>
+            <input
+              {...register("age", { required: true })}
+              placeholder="age"
+              className="form-control"
+            />
+            {errors.age && (
+              <span style={{ color: "red" }}>This field is required</span>
+            )}
+            <br></br>
+            <input
+              {...register("phoneNumber", { required: true })}
+              placeholder="phone number"
+              className="form-control"
+            />
+            {errors.phoneNumber && (
+              <span style={{ color: "red" }}>This field is required</span>
+            )}
+            <br></br>
+            <input
+              {...register("email", { required: true })}
+              placeholder="email"
+              className="form-control"
+            />
+            {errors.email && (
+              <span style={{ color: "red" }}>This field is required</span>
+            )}
+            <br></br>
 
-          {/* include validation with required or other standard HTML validation rules */}
-          <input {...register("exampleRequired", { required: true })} />
-          {/* errors will return when field validation fails  */}
-          {errors.exampleRequired && <span>This field is required</span>}
-
-          <input type="submit" />
-        </form>
+            <input className="btn btn-primary" type="submit" />
+          </form>
+        </div>
       </Modal>
     </div>
   );
